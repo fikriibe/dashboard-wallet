@@ -13,7 +13,13 @@ const Avatar: FC<Props> = ({ src = "", alt = "avatar", size }) => {
       style={{ width: size, height: size }}
       className="rounded-full overflow-hidden relative"
     >
-      <Image src={src} alt={alt} sizes={`${size}`} fill objectFit="cover" />
+      <Image
+        src={src}
+        alt={alt}
+        sizes={`${size}`}
+        fill
+        className="object-cover"
+      />
     </div>
   );
 };

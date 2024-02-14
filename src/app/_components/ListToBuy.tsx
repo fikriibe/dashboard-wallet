@@ -4,7 +4,7 @@ import Button from "@/components/atoms/Button";
 import Checkbox from "@/components/atoms/Checkbox";
 import Typography from "@/components/atoms/Typography";
 import ButtonOption from "@/components/molecules/ButtonOption";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { PiPlusBold } from "react-icons/pi";
 
 const ListToBuy = () => {
@@ -17,7 +17,7 @@ const ListToBuy = () => {
 
   const renderItem = useCallback(
     (item: (typeof state)[0], index: number) => (
-      <div className="flex items-center gap-2 bg-neutral-200 rounded-lg p-1 pl-3">
+      <div key={item.title} className="flex items-center gap-2 bg-neutral-200 rounded-lg p-1 pl-3">
         <Checkbox
           checked={item.isChecked}
           onChange={(newChecked) =>
@@ -38,7 +38,10 @@ const ListToBuy = () => {
     []
   );
 
-  const totalChecked = state.filter(({ isChecked }) => isChecked).length;
+  const totalChecked = useMemo(
+    () => state.filter(({ isChecked }) => isChecked).length,
+    [state]
+  );
 
   return (
     <div className="flex flex-col gap-4">
