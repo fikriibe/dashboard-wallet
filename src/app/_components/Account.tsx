@@ -6,7 +6,7 @@ import React from "react";
 const Account = () => {
   return (
     <div
-      className="overflow-hidden rounded-lg p-6 min-h-[250px] flex flex-col text-white gap-3 object-cover object-center"
+      className="overflow-hidden rounded-lg p-6 min-h-[250px] h-[100%] flex flex-col text-white gap-3 object-cover object-center"
       style={{
         backgroundImage:
           "url(https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",

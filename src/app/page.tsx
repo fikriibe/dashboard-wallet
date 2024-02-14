@@ -1,15 +1,16 @@
 import ExpenseIncomeSection from "@/app/_components/ExpenseIncome";
-import Card from "@/components/atoms/Card";
-import LatestSpending from "./_components/LatestSpending";
-import PremiumSubs from "./_components/PremiumSubs";
-import Typography from "@/components/atoms/Typography";
 import ButtonIcon from "@/components/atoms/ButtonIcon";
+import Card from "@/components/atoms/Card";
+import Typography from "@/components/atoms/Typography";
 import { PiMagnifyingGlass } from "react-icons/pi";
-import LastTransaction from "./_components/LastTransaction";
-import ListToBuy from "./_components/ListToBuy";
-import Chat from "./_components/Chat";
-import Logo from "@/components/molecules/Logo";
 import Account from "./_components/Account";
+import BalanceStatistic from "./_components/BalanceStatistic";
+import Chat from "./_components/Chat";
+import LastTransaction from "./_components/LastTransaction";
+import LatestSpending from "./_components/LatestSpending";
+import ListToBuy from "./_components/ListToBuy";
+import PremiumSubs from "./_components/PremiumSubs";
+import Analytics from "./_components/Analytics";
 
 export default function Home() {
   return (
@@ -30,7 +31,11 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-5 gap-4">
-          <div className="col-span-3"></div>
+          <div className="col-span-3">
+            <Card withPadding>
+              <BalanceStatistic />
+            </Card>
+          </div>
           <div className="col-span-2">
             <Card>
               <Account />
@@ -50,6 +55,11 @@ export default function Home() {
           <div className="col-span-2">
             <Card withPadding>
               <LastTransaction />
+            </Card>
+          </div>
+          <div>
+            <Card withPadding>
+              <Analytics />
             </Card>
           </div>
         </div>
