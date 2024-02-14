@@ -7,6 +7,9 @@ import ButtonIcon from "@/components/atoms/ButtonIcon";
 import { PiMagnifyingGlass } from "react-icons/pi";
 import LastTransaction from "./_components/LastTransaction";
 import ListToBuy from "./_components/ListToBuy";
+import Chat from "./_components/Chat";
+import Logo from "@/components/molecules/Logo";
+import Account from "./_components/Account";
 
 export default function Home() {
   return (
@@ -25,13 +28,24 @@ export default function Home() {
             <PiMagnifyingGlass size={20} />
           </ButtonIcon>
         </div>
+
+        <div className="grid grid-cols-5 gap-4">
+          <div className="col-span-3"></div>
+          <div className="col-span-2">
+            <Card>
+              <Account />
+            </Card>
+          </div>
+        </div>
+
         <Card>
           <div className="flex [&>div]:p-4 [&>div]:flex-1">
             <ListToBuy />
             <span className="self-stretch w-[1px] bg-neutral-300" />
-            <div></div>
+            <Chat />
           </div>
         </Card>
+
         <div className="grid grid-cols-3 gap-4">
           <div className="col-span-2">
             <Card withPadding>

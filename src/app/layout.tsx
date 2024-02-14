@@ -1,12 +1,11 @@
+import Avatar from "@/components/atoms/Avatar";
+import ButtonIcon from "@/components/atoms/ButtonIcon";
+import Logo from "@/components/molecules/Logo";
+import SidebarNav from "@/components/organisms/SidebarNav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { PiChats, PiSignOut } from "react-icons/pi";
 import "./globals.css";
-import Typography from "@/components/atoms/Typography";
-import { PiChats } from "react-icons/pi";
-import ButtonIcon from "@/components/atoms/ButtonIcon";
-import SidebarNav from "@/components/organisms/SidebarNav";
-import Avatar from "@/components/atoms/Avatar";
-import { PiSignOut } from "react-icons/pi";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="text-neutral-800">
           <div className="bg-white w-[80px] flex flex-col items-center gap-5 pt-8 pb-[80px] fixed top-0 left-0 h-full">
-            <Typography variant="header" size="lg">
-              S.
-            </Typography>
+            <Logo />
             <ButtonIcon className="bg-yellow-300 text-neutral-700">
               <PiChats size={20} />
             </ButtonIcon>
