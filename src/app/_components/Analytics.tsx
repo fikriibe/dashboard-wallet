@@ -1,7 +1,6 @@
 import Typography from "@/components/atoms/Typography";
 import ButtonOption from "@/components/molecules/ButtonOption";
 import Chart from "@/components/organisms/Chart";
-import { useMemo } from "react";
 
 const options: Highcharts.Options = {
   chart: {
@@ -12,12 +11,17 @@ const options: Highcharts.Options = {
   },
   pane: {
     size: "100%",
-    innerSize: "65%",
+    innerSize: "10%",
     startAngle: -90,
     endAngle: 90,
   },
   xAxis: {
     gridLineWidth: 0,
+    lineWidth: 0,
+    tickWidth: 0,
+    labels: {
+      enabled: false,
+    },
   },
   plotOptions: {
     column: {
@@ -25,6 +29,7 @@ const options: Highcharts.Options = {
       borderWidth: 0,
       pointPadding: 0,
       groupPadding: 0.15,
+      borderRadius: "10%",
     },
   },
 };
@@ -54,6 +59,8 @@ const Analytics = () => {
             ...options,
             yAxis: {
               tickInterval: 100,
+              lineWidth: 0,
+              tickWidth: 0,
               labels: {
                 format: "{text}",
               },

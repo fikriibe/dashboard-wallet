@@ -15,7 +15,7 @@ const variants: Record<Props["variant"], string> = {
 const sizes: Record<Props["size"], string> = {
   lg: "text-md py-3 px-5 rounded-lg",
   md: "text-sm py-2 px-3 rounded-md",
-  sm: "text-xs py-1 px-1 rounded-sm",
+  sm: "text-xs py-1 px-2 rounded-md",
 };
 
 const Button: FC<Props> = ({ children, variant, size, className }) => {

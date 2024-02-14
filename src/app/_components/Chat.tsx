@@ -12,14 +12,14 @@ const Chat = () => {
       </Typography>
       <div className="flex flex-col gap-2 flex-1">
         <div className="flex items-end justify-end gap-2">
-          <div className="bg-blue-500 text-white p-2 rounded-lg ">
+          <div className="bg-blue-500 text-white p-2 rounded-lg rounded-br-none">
             <Typography>Are you ready?</Typography>
           </div>
           <Avatar src="/profile.jpeg" size={40} />
         </div>
         <div className="flex items-end justify-start gap-2">
           <Avatar src="/profile.jpeg" size={40} />
-          <div className="bg-neutral-200 p-2 rounded-lg ">
+          <div className="bg-neutral-200 p-2 rounded-lg rounded-bl-none">
             <Typography>i have prepared everything</Typography>
           </div>
         </div>
