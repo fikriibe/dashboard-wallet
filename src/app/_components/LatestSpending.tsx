@@ -1,9 +1,9 @@
 import Avatar from "@/components/atoms/Avatar";
 import Button from "@/components/atoms/Button";
-import ButtonIcon from "@/components/atoms/ButtonIcon";
 import Typography from "@/components/atoms/Typography";
+import ButtonOption from "@/components/molecules/ButtonOption";
 import { Fragment } from "react";
-import { PiDotsThreeOutlineBold, PiArrowRightLight } from "react-icons/pi";
+import { PiArrowRightLight } from "react-icons/pi";
 
 const data = [
   {
@@ -33,9 +33,7 @@ const LatestSpending = () => {
         <Typography variant="header" size="md">
           Latest Spending
         </Typography>
-        <ButtonIcon>
-          <PiDotsThreeOutlineBold size={20} />
-        </ButtonIcon>
+        <ButtonOption />
       </div>
       {data.map(({ title, date, image }, index) => (
         <Fragment key={title}>
