@@ -1,4 +1,16 @@
+## 🚀 TyrAds Test - Next js
+
+## Demo
+
+
 ## Getting Started
+
+To run the program, it is necessary to install the required packages beforehand.
+
+```bash
+yarn
+```
+
 
 First, run the development server:
 
