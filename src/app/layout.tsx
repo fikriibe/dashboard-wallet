@@ -23,8 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <div className="bg-white w-[80px] flex flex-col items-center gap-5 py-8">
+        <div className="text-neutral-800">
+          <div className="bg-white w-[80px] flex flex-col items-center gap-5 pt-8 pb-[80px] fixed top-0 left-0 h-full">
             <Typography variant="header" size="lg">
               S.
             </Typography>
@@ -39,7 +39,7 @@ export default function RootLayout({
               </ButtonIcon>
             </div>
           </div>
-          <div className="flex-1">{children}</div>
+          <div className="ml-[80px]">{children}</div>
         </div>
       </body>
     </html>

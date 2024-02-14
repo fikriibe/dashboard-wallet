@@ -9,7 +9,7 @@ type Props = {
 const ButtonIcon: FC<Props> = ({ children, onClick, className }) => {
   return (
     <div
-      className={` w-10 h-10 rounded-full overflow-hidden grid place-content-center ${className}`}
+      className={` w-10 h-10 rounded-full overflow-hidden grid place-content-center hover:cursor-pointer ${className}`}
       onClick={onClick}
     >
       {children}

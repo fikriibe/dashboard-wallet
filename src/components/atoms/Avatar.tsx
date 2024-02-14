@@ -11,9 +11,9 @@ const Avatar: FC<Props> = ({ src = "", alt = "avatar", size }) => {
   return (
     <div
       style={{ width: size, height: size }}
-      className="rounded-full overflow-hidden"
+      className="rounded-full overflow-hidden relative"
     >
-      <Image src={src} alt={alt} width={size} height={size} />
+      <Image src={src} alt={alt} sizes={`${size}`} fill objectFit="cover" />
     </div>
   );
 };
