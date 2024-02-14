@@ -1,13 +1,14 @@
 "use client";
 
 import Button from "@/components/atoms/Button";
+import Checkbox from "@/components/atoms/Checkbox";
 import Typography from "@/components/atoms/Typography";
 import ButtonOption from "@/components/molecules/ButtonOption";
 import { useCallback, useState } from "react";
 import { PiPlusBold } from "react-icons/pi";
 
 const ListToBuy = () => {
-  const [state] = useState([
+  const [state, setState] = useState([
     { title: "macbook", isChecked: true },
     { title: "bicycle", isChecked: false },
     { title: "motorcycle", isChecked: true },
@@ -15,9 +16,19 @@ const ListToBuy = () => {
   ]);
 
   const renderItem = useCallback(
-    (item: (typeof state)[0]) => (
-      <div className="flex items-center gap-2 bg-neutral-200 rounded-lg p-1">
-        <input type="checkbox" value={String(item.isChecked)} />
+    (item: (typeof state)[0], index: number) => (
+      <div className="flex items-center gap-2 bg-neutral-200 rounded-lg p-1 pl-3">
+        <Checkbox
+          checked={item.isChecked}
+          onChange={(newChecked) =>
+            setState((prev) =>
+              prev.map((prevItem, i) => ({
+                ...prevItem,
+                isChecked: index == i ? newChecked : prevItem.isChecked,
+              }))
+            )
+          }
+        />
         <Typography className="flex-1" variant="header" size="sm">
           {item.title}
         </Typography>
