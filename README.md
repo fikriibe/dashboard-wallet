@@ -1,6 +1,8 @@
 ## 🚀 TyrAds Test - Next js
 
 ## Demo
+<img width="1090" alt="Screenshot 2024-02-15 at 12 02 36" src="https://github.com/fikriibe/dashboard-wallet/assets/49143372/3f5c8b39-eb56-46d9-9a92-1fcb88f66b78">
+<img width="432" alt="Screenshot 2024-02-15 at 12 03 09" src="https://github.com/fikriibe/dashboard-wallet/assets/49143372/0031d514-c3aa-4430-8ef7-7f539226b9d2">
 
 
 ## Getting Started
