@@ -1,32 +1,48 @@
+"use client";
+
 import Button from "@/components/atoms/Button";
 import Typography from "@/components/atoms/Typography";
 import ButtonOption from "@/components/molecules/ButtonOption";
 import { formatDate } from "@/utils/date";
 import { formatAmountWithSymbol } from "@/utils/number";
-import { Fragment, useCallback } from "react";
+import { Fragment, useCallback, useState } from "react";
 import { PiUserBold } from "react-icons/pi";
 
-const data = [
-  {
-    title: "Bessie Cooper",
-    timestamp: 1688270577000,
-    total: -3000,
-  },
-  {
-    title: "Bessie Cooper",
-    timestamp: 1638270577000,
-    total: 1970,
-  },
-  {
-    title: "Bessie Cooper",
-    timestamp: 1668270577000,
-    total: -5000,
-  },
-];
-
 const LastTransaction = () => {
+  const [state, setState] = useState([
+    {
+      title: "Bessie Cooper",
+      timestamp: 1688270577000,
+      total: -3000,
+    },
+    {
+      title: "Guy Hawkins",
+      timestamp: 1638270577000,
+      total: 1970,
+    },
+    {
+      title: "Floyd Miles",
+      timestamp: 1668270577000,
+      total: -5000,
+    },
+  ]);
+
+  const onSort = useCallback(
+    (order: "asc" | "desc") =>
+      setState((prev) => {
+        const newData = prev.sort((a, b) => {
+          if (order == "asc") {
+            return a.timestamp - b.timestamp;
+          }
+          return b.timestamp - a.timestamp;
+        });
+        return [...newData];
+      }),
+    []
+  );
+
   const renderItem = useCallback(
-    (item: (typeof data)[0]) => (
+    (item: (typeof state)[0]) => (
       <Fragment key={item.title}>
         <hr />
         <div className="flex gap-3 items-center">
@@ -53,14 +69,24 @@ const LastTransaction = () => {
         <Typography variant="header" className="flex-1">
           Latest transactions
         </Typography>
-        <Button variant="link" size="sm" className="text-neutral-600 underline">
+        <Button
+          variant="link"
+          size="sm"
+          className="text-neutral-600 underline"
+          onClick={() => onSort("desc")}
+        >
           Newest
         </Button>
-        <Button variant="link" size="sm" className="text-neutral-600 underline">
+        <Button
+          variant="link"
+          size="sm"
+          className="text-neutral-600 underline"
+          onClick={() => onSort("asc")}
+        >
           Oldest
         </Button>
       </div>
-      {data.map(renderItem)}
+      {state.map(renderItem)}
     </div>
   );
 };
